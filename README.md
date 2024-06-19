@@ -5,8 +5,8 @@ Group Name: __Fill your team name__.
 Section: __Fill your class section__. 
 
 Team Mates:
-1. __Fill name__ and __matric no__
-2. __Fill name__ and __matric no__
+1. Firdaus
+2. Amirul
 3. Muhammad Najmi bin Muslim
 
 ## Rules
