@@ -1,13 +1,13 @@
 # OSProject Running Containers for Application Development
 
-Group Name: __Fill your team name__. 
+Group Name: __P. OS__. 
 
-Section: __Fill your class section__. 
+Section: __4__. 
 
 Team Mates:
-1. Firdaus
-2. Amirul
-3. Muhammad Najmi bin Muslim
+1. __Muhammad Firdaus bin Zaini__ and __2217753__
+2. __Amirul Fikri bin Amir__ and __2217981__
+3. __Muhammad Najmi bin Muslim__ and __2129441__
 
 ## Rules
 1. You are allowed to have **3 group** members. *Exception* is allowed **IFF (if and only if)** you are allowed to have 4 group members if you are a **multinational** or a **multigender** group. 
@@ -25,10 +25,9 @@ Team Mates:
 
 ***Questions:***
 
-1. What is the link of the fork OSProject in your repository. ***(1 mark)*** __Fill answer here__.
-       https://github.com/najmihoshi/OSProject
-2. How many files and folders are in this repository. ***(1 mark)*** __Fill answer here__.
-        2 files which are images and Readme.md
+1. What is the link of the fork OSProject in your repository. ***(1 mark)*** __https://github.com/najmihoshi/OSProject__.
+2. How many files and folders are in this repository. ***(1 mark)*** __2 files which are images and Readme.md__.
+        
 
 
 ## Exploring github codespaces
