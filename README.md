@@ -25,8 +25,10 @@ Team Mates:
 
 ***Questions:***
 
-1. What is the link of the fork OSProject in your repository. ***(1 mark)*** __https://github.com/najmihoshi/OSProject__.
-2. How many files and folders are in this repository. ***(1 mark)*** __2 files which are images and Readme.md__.
+1. What is the link of the fork OSProject in your repository. ***(1 mark)*** 
+__https://github.com/najmihoshi/OSProject__.
+2. How many files and folders are in this repository. ***(1 mark)*** 
+__2 files which are images and Readme.md__.
         
 
 
@@ -59,12 +61,15 @@ Team Mates:
 
 ***Questions:***
 
-1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** __Fill answer here__.
-It will run on Linux environment
-2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** __Fill answer here__.
-There are 2 cores, 8 GB RAM, and 32 GB storage, up to 32 cores, 64 GB RAM, and 128 GB storage.
-3. Why must we commit and sync our current work on source control? ***(1 mark)*** __Fill answer here__.
-To make sure our work is saved into the main repository
+1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** 
+- __It will run on Linux environment__.
+
+2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** 
+- __There are 2 cores, 8 GB RAM, and 32 GB storage, up to 32 cores, 64 GB RAM, and 128 GB storage.__.
+
+3. Why must we commit and sync our current work on source control? ***(1 mark)*** 
+- __To make sure our work is saved into the main repository__.
+
 
 ## Exploring the Terminal
 
@@ -81,47 +86,47 @@ codespace
 
 Look at the TERMINAL tab. Run the following commands and provide the output here. 
 
-1. Run the command **pwd** . ***(1 mark)*** __Fill answer here__.
+1. Run the command **pwd** . ***(1 mark)***  
 <img src="./images/terminalAnswer/1.png" width="70%">
 
-2. Run the command **cat /etc/passwd** . ***(1 mark)*** __Fill answer here__.
+2. Run the command **cat /etc/passwd** . ***(1 mark)***  
 <img src="./images/terminalAnswer/2.png" width="70%">
 
-3. Run the command **df** . ***(1 mark)*** __Fill answer here__.
+3. Run the command **df** . ***(1 mark)***  
 <img src="./images/terminalAnswer/3.png" width="70%">
 
-4. Run the command **du** . ***(1 mark)*** __Fill answer here__.
+4. Run the command **du** . ***(1 mark)***    
 <img src="./images/terminalAnswer/4.png" width="70%">
 
-5. Run the command **ls** . ***(1 mark)*** __Fill answer here__.
+5. Run the command **ls** . ***(1 mark)***      
 <img src="./images/terminalAnswer/5.png" width="70%">
 
-6. Run the command **ls -asl** . ***(1 mark)*** __Fill answer here__.
+6. Run the command **ls -asl** . ***(1 mark)***        
 <img src="./images/terminalAnswer/6.png" width="70%">
 
-7. Run the command **free -h** . ***(1 mark)*** __Fill answer here__.
+7. Run the command **free -h** . ***(1 mark)*** 
 <img src="./images/terminalAnswer/7.png" width="70%">
 
-8. Run the command **cat /proc/cpuinfo** . ***(1 mark)*** __Fill answer here__.
+8. Run the command **cat /proc/cpuinfo** . ***(1 mark)*** 
 <img src="./images/terminalAnswer/8.png" width="70%">
 
-9. Run the command **top** and type **q** to quit. ***(1 mark)*** __Fill answer here__.
+9. Run the command **top** and type **q** to quit. ***(1 mark)***        
 <img src="./images/terminalAnswer/9.png" width="70%">
 
-10. Run the command **uname -a**. ***(1 mark)*** __Fill answer here__.
+10. Run the command **uname -a**. ***(1 mark)*** 
 <img src="./images/terminalAnswer/10.png" width="70%">
 
-11. What is the available free memory in the system. ***(1 mark)*** __Fill answer here__.
-6.1Gi
+11. What is the available free memory in the system. ***(1 mark)*** 
+- __6.1Gi__.
 
 12. What is the available disk space mounted on /workspace. ***(1 mark)*** __Fill answer here__.
 
-13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)*** __Fill answer here__.
-Linux codespaces-a96fa5 6.5.0-1022-azure #23~22.04.1-Ubuntu SMP Thu May  9 17:59:24 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)*** 
+- __Linux codespaces-a96fa5 6.5.0-1022-azure #23~22.04.1-Ubuntu SMP Thu May  9 17:59:24 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux__.
 
-14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)*** __Fill answer here__.
-- ls is command lists files and directories in the current directory
-- ls -asl command provide detailed listing including hidden files,in long format, file permissions, owner, group, size and modification time.
+14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)*** 
+- __ls is command lists files and directories in the current directory.__
+- __ls -asl command provide detailed listing including hidden files,in long format, file permissions, owner, group, size and modification time.__
 
 15. What is the TLB size of the Virtual CPU. ***(1 mark)*** __Fill answer here__.
 
@@ -129,7 +134,7 @@ Linux codespaces-a96fa5 6.5.0-1022-azure #23~22.04.1-Ubuntu SMP Thu May  9 17:59
 16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** __Fill answer here__.
 
 
-17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** __Fill answer here__.
+17. What is the top running process that consumes the most CPU cycles. ***(1 mark)***  
 <img src="./images/terminalAnswer/17.png" width="70%">
 
 
@@ -191,8 +196,10 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 
 ***Questions:***
 
-1. Are files in the container persistent. Why not?. ***(1 mark)*** __No it's not persistent because once you remove the container, the file will not be saved__.
-2. Can we run two, or three instances of debian linux? . ***(1 mark)*** __Yes we can__.
+1. Are files in the container persistent. Why not?. ***(1 mark)*** 
+- __No it's not persistent because once you remove the container, the file will not be saved__.
+2. Can we run two, or three instances of debian linux? . ***(1 mark)*** 
+- __Yes we can__.
 
 ## Running your own container with persistent storage
 
@@ -211,8 +218,9 @@ At the terminal, create a new directory called **myroot**, and run a instance of
 
 ***Questions:***
 
-1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)*** __'root' and 'root'__.
-```
+1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)*** 
+- __'root' and 'root'__.
+```bash
 @MirulFikri ➜ /workspaces/OSProject/myroot (main) $ ls -l /workspaces/OSProject/myroot
 total 4
 -rw-rw-rw- 1 root root 14 Jun 27 13:47 helloworld.txt
@@ -225,8 +233,8 @@ sudo chown -R codespace:codespace myroot
 
 ```
 
-__Yes__.
-```
+- __Yes__.
+```bash
 @MirulFikri ➜ /workspaces/OSProject/myroot (main) $ sudo chown -R codespace:codespace /workspaces/OSProject/myroot
 
 @MirulFikri ➜ /workspaces/OSProject/myroot (main) $ ls -l /workspaces/OSProject/myroot
@@ -279,11 +287,35 @@ docker run -itd --net rednet --name c2 busybox sh
 ```
 ***Questions:***
 
-1. Describe what is busybox and what is command switch **--name** is for? . ***(2 mark)*** __Fill answer here__.
-2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)*** __Fill answer here__.
-3. Using ```docker inspect c1``` and ```docker inspect c2``` inscpect the two network. What is the gateway of bluenet and rednet.? ***(1 mark)*** __Fill answer here__.
-4. What is the network address for the running container c1 and c2? ***(1 mark)*** __Fill answer here__.
-5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)*** __Fill answer here__.
+1. Describe what is busybox and what is command switch **--name** is for? . ***(2 mark)*** 
+- __Busybox combines tiny versions of many common UNIX utilities into a single small executable.__
+- __The command switch ```--name``` is used to assign a specific name to the container.__
+
+2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)*** 
+```bash
+@MirulFikri ➜ /workspaces/OSProject (main) $ docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+22d332f3a2fa   bluenet   bridge    local
+156996483fe7   bridge    bridge    local
+f09bdb1e4b73   host      host      local
+95178c6816a5   none      null      local
+bddc169c0874   rednet    bridge    local
+```
+
+3. Using ```docker inspect c1``` and ```docker inspect c2``` inscpect the two network. What is the gateway of bluenet and rednet.? ***(1 mark)*** 
+- bluenet gateway: __172.18.0.1__.
+- rednet gateway: __172.19.0.1__.
+
+4. What is the network address for the running container c1 and c2? ***(1 mark)*** 
+- c1: __172.18.0.2__.
+- c2: __172.19.0.2__.
+
+5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)*** 
+- __No, I was not able to ping__.
+```bash
+@MirulFikri ➜ /workspaces/OSProject (main) $ docker exec c1 ping c2
+ping: bad address 'c2'
+```
 
 ## Bridging two SUB Networks
 1. Let's try this again by creating a network to bridge the two containers in the two subnetworks
@@ -295,8 +327,20 @@ docker exec c1 ping c2
 ```
 ***Questions:***
 
-1. Are you able to ping? Show your output . ***(1 mark)*** __Fill answer here__.
-2. What is different from the previous ping in the section above? ***(1 mark)*** __Fill answer here__.
+1. Are you able to ping? Show your output . ***(1 mark)*** 
+- __Yes__.
+```bash
+@MirulFikri ➜ /workspaces/OSProject (main) $ docker exec c1 ping c2
+PING c2 (172.20.0.3): 56 data bytes
+64 bytes from 172.20.0.3: seq=0 ttl=64 time=0.132 ms
+64 bytes from 172.20.0.3: seq=1 ttl=64 time=0.087 ms
+64 bytes from 172.20.0.3: seq=2 ttl=64 time=0.110 ms
+64 bytes from 172.20.0.3: seq=3 ttl=64 time=0.090 ms
+64 bytes from 172.20.0.3: seq=4 ttl=64 time=0.119 ms
+```
+
+2. What is different from the previous ping in the section above? ***(1 mark)*** 
+- __The previous ping failed because c1 and c2 were on separate networks. Now both containers are connected to the same bridgenet network.__
 
 ## Intermediate Level (10 marks bonus)
 
