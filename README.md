@@ -119,7 +119,7 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
 11. What is the available free memory in the system. ***(1 mark)*** __218Mi__.
 
 
-12. What is the available disk space mounted on /workspace. ***(1 mark)*** __Fill answer here__.
+12. What is the available disk space mounted on /workspace. ***(1 mark)*** __20771672__.
 
 13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)*** 
 - __Linux codespaces-a96fa5 6.5.0-1022-azure #23~22.04.1-Ubuntu SMP Thu May  9 17:59:24 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux__.
