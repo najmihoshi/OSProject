@@ -156,21 +156,7 @@ Tasks:  60 total,   1 running,  59 sleeping,   0 stopped,   0 zombie
 %Cpu(s):  8.2 us,  9.6 sy,  0.0 ni, 81.5 id,  0.5 wa,  0.0 hi,  0.2 si,  0.0 st
 MiB Mem :   7929.6 total,    340.0 free,   3738.6 used,   3851.0 buff/cache
 MiB Swap:      0.0 total,      0.0 free,      0.0 used.   3805.4 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                                                        
-  17579 codespa+  20   0   21.5g 383392  49920 S   4.7   4.7   0:17.58 node                                                                                                                           
-   7975 codespa+  20   0   21.5g 374812  55424 S   2.7   4.6   0:22.11 node                                                                                                                           
-  17627 codespa+  20   0 1012120  74480  39552 S   2.7   0.9   0:00.68 node                                                                                                                           
-   4610 codespa+  20   0   21.5g 391452  55424 S   2.3   4.8   0:24.57 node                                                                                                                           
-    583 codespa+  20   0   21.5g 343232  55296 S   2.0   4.2   0:26.27 node                                                                                                                           
-  13282 codespa+  20   0   21.6g 410336  55424 S   1.0   5.1   0:24.93 node                                                                                                                           
-   1023 codespa+  20   0 1321048  62088  42112 S   0.7   0.8   0:01.45 node                                                                                                                           
-    562 codespa+  20   0 1345372 115912  45312 S   0.3   1.4   0:23.50 node                                                                                                                           
-   2470 root      20   0 1798928  48996  30976 S   0.3   0.6   0:00.35 containerd                                                                                                                     
-   4621 codespa+  20   0 1240636  54972  41216 S   0.3   0.7   0:00.21 node                                                                                                                           
-   7956 codespa+  20   0 1240760  54968  41216 S   0.3   0.7   0:00.21 node                                                                                                                           
-      1 codespa+  20   0    1136    640    640 S   0.0   0.0   0:00.03 docker-init                                                                                                                    
-      8 codespa+  20   0    7236   1664   1664 S   0.0   0.0   0:00.01 sleep        
+  
 ```
 
 9. Run the command **top** and type **q** to quit. ***(1 mark)***        
