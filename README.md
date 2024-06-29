@@ -112,8 +112,8 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
 10. Run the command **uname -a**. ***(1 mark)*** __Fill answer here__.
 <img src="./images/terminalAnswer/10.png" width="70%">
 
-11. What is the available free memory in the system. ***(1 mark)*** __Fill answer here__.
-6.1Gi
+11. What is the available free memory in the system. ***(1 mark)*** __218Mi__.
+
 
 12. What is the available disk space mounted on /workspace. ***(1 mark)*** __Fill answer here__.
 
@@ -124,14 +124,14 @@ Linux codespaces-a96fa5 6.5.0-1022-azure #23~22.04.1-Ubuntu SMP Thu May  9 17:59
 - ls is command lists files and directories in the current directory
 - ls -asl command provide detailed listing including hidden files,in long format, file permissions, owner, group, size and modification time.
 
-15. What is the TLB size of the Virtual CPU. ***(1 mark)*** __Fill answer here__.
+15. What is the TLB size of the Virtual CPU. ***(1 mark)*** __2560 4K pages__.
 
 
-16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** __Fill answer here__.
+16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** __3229.147 Mhz__.
 
 
-17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** __Fill answer here__.
-<img src="./images/terminalAnswer/17.png" width="70%">
+17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** __PID 4610__.
+
 
 
 ## Running your own container instance.
