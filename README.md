@@ -315,17 +315,36 @@ docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ 
 
 ***Questions:***
 
-1. What is the permission of folder /usr/local/apache/htdocs and what user and group owns the folder? . ***(2 mark)*** __Fill answer here__.
-
-2. What port is the apache web server running. ***(1 mark)*** 
-- __Ports 80__.
+1. What is the permission of folder /usr/local/apache/htdocs and what user and group owns the folder? . ***(2 mark)*** __drwxr-xr-x represents the permissions:
+d indicates it's a directory
+rwx means the owner (root) has read, write, and execute permissions
+r-x means the group (root) has read and execute permissions, but not write
+r-x means others (everyone else) have read and execute permissions, but not write
+root root indicates the owner and group of the directory, both of which are root__.
 ```bash
-@firdauz003 ➜ /workspaces/OSProject/webpage (main) $ docker ps
-CONTAINER ID   IMAGE     COMMAND              CREATED          STATUS          PORTS                                   NAMES
-690a8d7fe4a7   httpd     "httpd-foreground"   25 minutes ago   Up 25 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   stupefied_chatterjee
+@firdauz003 ➜ /workspaces/OSProject (main) $ docker run --rm httpd ls -ld /usr/local/apache2/htdocs
+drwxr-xr-x 2 root root 4096 Jun 13 18:30 /usr/local/apache2/htdocs
 ```
 
-3. What port is open for http protocol on the host machine? ***(1 mark)*** __Fill answer here__.
+2. What port is the apache web server running. ***(1 mark)*** 
+- __Port 80__.
+```bash
+@firdauz003 ➜ /workspaces/OSProject (main) $ docker ps
+CONTAINER ID   IMAGE     COMMAND              CREATED          STATUS          PORTS                                   NAMES
+635a1efe0c43   httpd     "httpd-foreground"   14 minutes ago   Up 14 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   relaxed_goodall
+@firdauz003 ➜ /workspaces/OSProject (main) $ docker exec -it 635a1efe0c43 cat /usr/local/apache2/conf/httpd.conf | grep Listen
+# Listen: Allows you to bind Apache to specific IP addresses and/or
+# Change this to Listen on specific IP addresses as shown below to 
+#Listen 12.34.56.78:80
+Listen 80
+```
+
+3. What port is open for http protocol on the host machine? ***(1 mark)*** __port 8080__.
+```bash
+@firdauz003 ➜ /workspaces/OSProject (main) $ docker port 635a1efe0c43 80
+0.0.0.0:8080
+[::]:8080
+```
 
 ## Create SUB Networks
 
@@ -540,9 +559,38 @@ You have now set up a Node.js application in a Docker container on nodejsnet net
 
 ***Questions:***
 
-1. What is the output of step 5 above, explain the error? ***(1 mark)*** __Fill answer here__.
-2. Show the instruction needed to make this work. ***(1 mark)*** __Fill answer here__.
+1. What is the output of step 5 above, explain the error? ***(1 mark)*** __ there is error because there is no table created yet__.
+```bash
+@firdauz003 ➜ /workspaces/OSProject/nodejs-app (main) $ curl http://localhost:3000/random
+Server Error@firdauz003 ➜ /workspaces/OSProject/nodejs-app (main) $
+```
+2. Show the instruction needed to make this work. ***(1 mark)*** __to make the command in the step 5 work, we need to create a table first__.
+```bash
+@firdauz003 ➜ /workspaces/OSProject/nodejs-app (main) $ docker exec -it be05a2555eef mysql -u root -p
+Enter password: 
+```
+__then we will enter mysql interface__,
+```bash
+mysql> create database mydb;
+Query OK, 1 row affected (0.03 sec)
 
+mysql> use mydb;
+Database changed
+mysql> create table mytable (
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> name VARCHAR(255) NOT NULL,
+    -> value VARCHAR(255) NOT NULL
+    -> );
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> INSERT INTO mytable (name, value) VALUES ('example1', 'value1'), ('example2', 'value2'), ('example3', 'value3');
+Query OK, 3 rows affected (0.02 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+```
+__and then we run again the command in step 5 __
+```bash
+curl http://localhost:3000/random
+```
 
 
 ## What to submit
