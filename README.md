@@ -108,7 +108,70 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
 <img src="./images/terminalAnswer/7.png" width="70%">
 
 8. Run the command **cat /proc/cpuinfo** . ***(1 mark)*** 
-<img src="./images/terminalAnswer/8.png" width="70%">
+```bash
+@najmihoshi ➜ /workspaces/OSProject (main) $ cat /proc/cpuinfo
+processor       : 0
+vendor_id       : AuthenticAMD
+cpu family      : 25
+model           : 1
+model name      : AMD EPYC 7763 64-Core Processor
+stepping        : 1
+microcode       : 0xffffffff
+cpu MHz         : 3225.700
+cache size      : 512 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 1
+apicid          : 0
+initial apicid  : 0
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl tsc_reliable nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext invpcid_single vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero xsaveerptr rdpru arat npt nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload umip vaes vpclmulqdq rdpid fsrm
+bugs            : sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass srso
+bogomips        : 4890.84
+TLB size        : 2560 4K pages
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 48 bits physical, 48 bits virtual
+power management:
+
+processor       : 1
+vendor_id       : AuthenticAMD
+cpu family      : 25
+model           : 1
+model name      : AMD EPYC 7763 64-Core Processor
+stepping        : 1
+microcode       : 0xffffffff
+cpu MHz         : 3229.147
+cache size      : 512 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 1
+top - 08:01:30 up 23 min,  0 users,  load average: 0.33, 0.33, 0.45
+Tasks:  60 total,   1 running,  59 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  8.2 us,  9.6 sy,  0.0 ni, 81.5 id,  0.5 wa,  0.0 hi,  0.2 si,  0.0 st
+MiB Mem :   7929.6 total,    340.0 free,   3738.6 used,   3851.0 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   3805.4 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                                                        
+  17579 codespa+  20   0   21.5g 383392  49920 S   4.7   4.7   0:17.58 node                                                                                                                           
+   7975 codespa+  20   0   21.5g 374812  55424 S   2.7   4.6   0:22.11 node                                                                                                                           
+  17627 codespa+  20   0 1012120  74480  39552 S   2.7   0.9   0:00.68 node                                                                                                                           
+   4610 codespa+  20   0   21.5g 391452  55424 S   2.3   4.8   0:24.57 node                                                                                                                           
+    583 codespa+  20   0   21.5g 343232  55296 S   2.0   4.2   0:26.27 node                                                                                                                           
+  13282 codespa+  20   0   21.6g 410336  55424 S   1.0   5.1   0:24.93 node                                                                                                                           
+   1023 codespa+  20   0 1321048  62088  42112 S   0.7   0.8   0:01.45 node                                                                                                                           
+    562 codespa+  20   0 1345372 115912  45312 S   0.3   1.4   0:23.50 node                                                                                                                           
+   2470 root      20   0 1798928  48996  30976 S   0.3   0.6   0:00.35 containerd                                                                                                                     
+   4621 codespa+  20   0 1240636  54972  41216 S   0.3   0.7   0:00.21 node                                                                                                                           
+   7956 codespa+  20   0 1240760  54968  41216 S   0.3   0.7   0:00.21 node                                                                                                                           
+      1 codespa+  20   0    1136    640    640 S   0.0   0.0   0:00.03 docker-init                                                                                                                    
+      8 codespa+  20   0    7236   1664   1664 S   0.0   0.0   0:00.01 sleep        
+```
 
 9. Run the command **top** and type **q** to quit. ***(1 mark)***        
 <img src="./images/terminalAnswer/9.png" width="70%">
