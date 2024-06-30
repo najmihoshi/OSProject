@@ -26,9 +26,9 @@ Team Mates:
 ***Questions:***
 
 1. What is the link of the fork OSProject in your repository. ***(1 mark)*** 
-__https://github.com/najmihoshi/OSProject__.
+- __https://github.com/najmihoshi/OSProject__.
 2. How many files and folders are in this repository. ***(1 mark)*** 
-__2 files which are images and Readme.md__.
+- __1 Readme.md file and 1 image folder that contains 6 files__.
         
 
 
@@ -62,10 +62,11 @@ __2 files which are images and Readme.md__.
 ***Questions:***
 
 1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** 
-- __It will run on Linux environment__.
+- __It will run on Ubuntu Linux__.
 
 2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** 
-- __There are 2 cores, 8 GB RAM, and 32 GB storage, up to 32 cores, 64 GB RAM, and 128 GB storage.__.
+- __2-core CPU, 8 GB RAM, and 32 GB storage.__ 
+- __4-core CPU, 16 GB RAM, and 64 GB storage.__.
 
 3. Why must we commit and sync our current work on source control? ***(1 mark)*** 
 - __To make sure our work is saved into the main repository__.
@@ -165,26 +166,28 @@ MiB Swap:      0.0 total,      0.0 free,      0.0 used.   3805.4 avail Mem
 10. Run the command **uname -a**. ***(1 mark)*** 
 <img src="./images/terminalAnswer/10.png" width="70%">
 
-11. What is the available free memory in the system. ***(1 mark)*** __218Mi__.
+11. What is the available free memory in the system. ***(1 mark)*** 
+- __218Mi__.
 
-
-12. What is the available disk space mounted on /workspace. ***(1 mark)*** __20771672__.
+12. What is the available disk space mounted on /workspace. ***(1 mark)*** 
+- __20771672__.
 
 13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)*** 
-- __Linux codespaces-a96fa5 6.5.0-1022-azure #23~22.04.1-Ubuntu SMP Thu May  9 17:59:24 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux__.
+- Version: __22.04.1-Ubuntu__.
+- Hardware architecture: __x86_64__
 
 14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)*** 
 - __ls is command lists files and directories in the current directory.__
 - __ls -asl command provide detailed listing including hidden files,in long format, file permissions, owner, group, size and modification time.__
 
-15. What is the TLB size of the Virtual CPU. ***(1 mark)*** __2560 4K pages__.
+15. What is the TLB size of the Virtual CPU. ***(1 mark)*** 
+- __2560 4K pages__.
 
+16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** 
+- __3229.147 Mhz__.
 
-16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** __3229.147 Mhz__.
-
-
-17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** __PID 4610__.
-
+17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** 
+- __PID 4610__.
 
 
 ## Running your own container instance.
@@ -323,7 +326,8 @@ gifted_shamir
 ***Questions:***
 
 1. Are files in the container persistent. Why not?. ***(1 mark)*** 
-- __No it's not persistent because once you remove the container, the file will not be saved__.
+- __No, files in the container are not persistent because containers are meant to be temporary and disposable. When a container is removed, its file system and any files within it are also deleted.__.
+
 2. Can we run two, or three instances of debian linux? . ***(1 mark)*** 
 - __Yes we can__.
 
@@ -392,17 +396,40 @@ docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ 
 
 ***Questions:***
 
-1. What is the permission of folder /usr/local/apache/htdocs and what user and group owns the folder? . ***(2 mark)*** __Fill answer here__.
+1. What is the permission of folder /usr/local/apache/htdocs and what user and group owns the folder? . ***(2 mark)*** 
+- The permission is __'drwxr-xr-x'__:
+d indicates it's a directory,
+rwx means the owner (root) has read, write, and execute permissions,
+r-x means the group (root) has read and execute permissions only,
+r-x means others (everyone else) also have read and execute permissions only.
+- __Both the user and group are root__.
 
-2. What port is the apache web server running. ***(1 mark)*** 
-- __Ports 80__.
 ```bash
-@firdauz003 ➜ /workspaces/OSProject/webpage (main) $ docker ps
-CONTAINER ID   IMAGE     COMMAND              CREATED          STATUS          PORTS                                   NAMES
-690a8d7fe4a7   httpd     "httpd-foreground"   25 minutes ago   Up 25 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   stupefied_chatterjee
+@firdauz003 ➜ /workspaces/OSProject (main) $ docker run --rm httpd ls -ld /usr/local/apache2/htdocs
+drwxr-xr-x 2 root root 4096 Jun 13 18:30 /usr/local/apache2/htdocs
 ```
 
-3. What port is open for http protocol on the host machine? ***(1 mark)*** __Fill answer here__.
+2. What port is the apache web server running. ***(1 mark)*** 
+- __Port 80__.
+```bash
+@firdauz003 ➜ /workspaces/OSProject (main) $ docker ps
+CONTAINER ID   IMAGE     COMMAND              CREATED          STATUS          PORTS                                   NAMES
+635a1efe0c43   httpd     "httpd-foreground"   14 minutes ago   Up 14 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   relaxed_goodall
+@firdauz003 ➜ /workspaces/OSProject (main) $ docker exec -it 635a1efe0c43 cat /usr/local/apache2/conf/httpd.conf | grep Listen
+# Listen: Allows you to bind Apache to specific IP addresses and/or
+# Change this to Listen on specific IP addresses as shown below to 
+#Listen 12.34.56.78:80
+Listen 80
+```
+
+3. What port is open for http protocol on the host machine? ***(1 mark)*** 
+- __port 8080__.
+
+```bash
+@firdauz003 ➜ /workspaces/OSProject (main) $ docker port 635a1efe0c43 80
+0.0.0.0:8080
+[::]:8080
+```
 
 ## Create SUB Networks
 
@@ -474,7 +501,7 @@ PING c2 (172.20.0.3): 56 data bytes
 ```
 
 2. What is different from the previous ping in the section above? ***(1 mark)*** 
-- __The previous ping failed because c1 and c2 were on separate networks. Now both containers are connected to the same bridgenet network.__
+- __The previous ping failed because c1 and c2 were on separate networks (bluenet and rednet). Now both containers are connected to the same bridgenet network, which allows them to ping each other.__
 
 ## Intermediate Level (10 marks bonus)
 
@@ -617,9 +644,43 @@ You have now set up a Node.js application in a Docker container on nodejsnet net
 
 ***Questions:***
 
-1. What is the output of step 5 above, explain the error? ***(1 mark)*** __Fill answer here__.
-2. Show the instruction needed to make this work. ***(1 mark)*** __Fill answer here__.
+1. What is the output of step 5 above, explain the error? ***(1 mark)*** 
+- __There is error because there is no table created yet__.
+```bash
+@firdauz003 ➜ /workspaces/OSProject/nodejs-app (main) $ curl http://localhost:3000/random
+Server Error@firdauz003 ➜ /workspaces/OSProject/nodejs-app (main) $
+```
 
+2. Show the instruction needed to make this work. ***(1 mark)*** 
+- __To make the command in the step 5 work, we need to create a table first__.
+```bash
+@firdauz003 ➜ /workspaces/OSProject/nodejs-app (main) $ docker exec -it be05a2555eef mysql -u root -p
+Enter password: 
+```
+
+- __then we will enter mysql interface__,
+```bash
+mysql> create database mydb;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> use mydb;
+Database changed
+mysql> create table mytable (
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> name VARCHAR(255) NOT NULL,
+    -> value VARCHAR(255) NOT NULL
+    -> );
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> INSERT INTO mytable (name, value) VALUES ('example1', 'value1'), ('example2', 'value2'), ('example3', 'value3');
+Query OK, 3 rows affected (0.02 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+```
+
+- __and then we run again the command in step 5__
+```bash
+curl http://localhost:3000/random
+```
 
 
 ## What to submit
