@@ -26,9 +26,9 @@ Team Mates:
 ***Questions:***
 
 1. What is the link of the fork OSProject in your repository. ***(1 mark)*** 
-__https://github.com/najmihoshi/OSProject__.
+- __https://github.com/najmihoshi/OSProject__.
 2. How many files and folders are in this repository. ***(1 mark)*** 
-__2 files which are images and Readme.md__.
+- __1 Readme.md file and 1 image folder that contains 6 files__.
         
 
 
@@ -62,10 +62,11 @@ __2 files which are images and Readme.md__.
 ***Questions:***
 
 1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** 
-- __It will run on Linux environment__.
+- __It will run on Ubuntu Linux__.
 
 2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** 
-- __There are 2 cores, 8 GB RAM, and 32 GB storage, up to 32 cores, 64 GB RAM, and 128 GB storage.__.
+- __2-core CPU, 8 GB RAM, and 32 GB storage.__ 
+- __4-core CPU, 16 GB RAM, and 64 GB storage.__.
 
 3. Why must we commit and sync our current work on source control? ***(1 mark)*** 
 - __To make sure our work is saved into the main repository__.
@@ -122,7 +123,8 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
 12. What is the available disk space mounted on /workspace. ***(1 mark)*** __Fill answer here__.
 
 13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)*** 
-- __Linux codespaces-a96fa5 6.5.0-1022-azure #23~22.04.1-Ubuntu SMP Thu May  9 17:59:24 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux__.
+- Version: __22.04.1-Ubuntu__.
+- Hardware architecture: __x86_64__
 
 14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)*** 
 - __ls is command lists files and directories in the current directory.__
@@ -197,7 +199,8 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 ***Questions:***
 
 1. Are files in the container persistent. Why not?. ***(1 mark)*** 
-- __No it's not persistent because once you remove the container, the file will not be saved__.
+- __No, files in the container are not persistent because containers are meant to be temporary and disposable. When a container is removed, its file system and any files within it are also deleted.__.
+
 2. Can we run two, or three instances of debian linux? . ***(1 mark)*** 
 - __Yes we can__.
 
