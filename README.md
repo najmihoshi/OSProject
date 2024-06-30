@@ -109,7 +109,56 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
 <img src="./images/terminalAnswer/7.png" width="70%">
 
 8. Run the command **cat /proc/cpuinfo** . ***(1 mark)*** 
-<img src="./images/terminalAnswer/8.png" width="70%">
+```bash
+@najmihoshi ➜ /workspaces/OSProject (main) $ cat /proc/cpuinfo
+processor       : 0
+vendor_id       : AuthenticAMD
+cpu family      : 25
+model           : 1
+model name      : AMD EPYC 7763 64-Core Processor
+stepping        : 1
+microcode       : 0xffffffff
+cpu MHz         : 3225.700
+cache size      : 512 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 1
+apicid          : 0
+initial apicid  : 0
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl tsc_reliable nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext invpcid_single vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero xsaveerptr rdpru arat npt nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload umip vaes vpclmulqdq rdpid fsrm
+bugs            : sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass srso
+bogomips        : 4890.84
+TLB size        : 2560 4K pages
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 48 bits physical, 48 bits virtual
+power management:
+
+processor       : 1
+vendor_id       : AuthenticAMD
+cpu family      : 25
+model           : 1
+model name      : AMD EPYC 7763 64-Core Processor
+stepping        : 1
+microcode       : 0xffffffff
+cpu MHz         : 3229.147
+cache size      : 512 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 1
+top - 08:01:30 up 23 min,  0 users,  load average: 0.33, 0.33, 0.45
+Tasks:  60 total,   1 running,  59 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  8.2 us,  9.6 sy,  0.0 ni, 81.5 id,  0.5 wa,  0.0 hi,  0.2 si,  0.0 st
+MiB Mem :   7929.6 total,    340.0 free,   3738.6 used,   3851.0 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   3805.4 avail Mem 
+  
+```
 
 9. Run the command **top** and type **q** to quit. ***(1 mark)***        
 <img src="./images/terminalAnswer/9.png" width="70%">
@@ -117,10 +166,10 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
 10. Run the command **uname -a**. ***(1 mark)*** 
 <img src="./images/terminalAnswer/10.png" width="70%">
 
-11. What is the available free memory in the system. ***(1 mark)*** 
-- __6.1Gi__.
+11. What is the available free memory in the system. ***(1 mark)*** __218Mi__.
 
-12. What is the available disk space mounted on /workspace. ***(1 mark)*** __Fill answer here__.
+
+12. What is the available disk space mounted on /workspace. ***(1 mark)*** __20771672__.
 
 13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)*** 
 - Version: __22.04.1-Ubuntu__.
@@ -130,14 +179,14 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
 - __ls is command lists files and directories in the current directory.__
 - __ls -asl command provide detailed listing including hidden files,in long format, file permissions, owner, group, size and modification time.__
 
-15. What is the TLB size of the Virtual CPU. ***(1 mark)*** __Fill answer here__.
+15. What is the TLB size of the Virtual CPU. ***(1 mark)*** __2560 4K pages__.
 
 
-16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** __Fill answer here__.
+16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** __3229.147 Mhz__.
 
 
-17. What is the top running process that consumes the most CPU cycles. ***(1 mark)***  
-<img src="./images/terminalAnswer/17.png" width="70%">
+17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** __PID 4610__.
+
 
 
 ## Running your own container instance.
@@ -269,17 +318,36 @@ docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ 
 
 ***Questions:***
 
-1. What is the permission of folder /usr/local/apache/htdocs and what user and group owns the folder? . ***(2 mark)*** __Fill answer here__.
-
-2. What port is the apache web server running. ***(1 mark)*** 
-- __Ports 80__.
+1. What is the permission of folder /usr/local/apache/htdocs and what user and group owns the folder? . ***(2 mark)*** __drwxr-xr-x represents the permissions:
+d indicates it's a directory
+rwx means the owner (root) has read, write, and execute permissions
+r-x means the group (root) has read and execute permissions, but not write
+r-x means others (everyone else) have read and execute permissions, but not write
+root root indicates the owner and group of the directory, both of which are root__.
 ```bash
-@firdauz003 ➜ /workspaces/OSProject/webpage (main) $ docker ps
-CONTAINER ID   IMAGE     COMMAND              CREATED          STATUS          PORTS                                   NAMES
-690a8d7fe4a7   httpd     "httpd-foreground"   25 minutes ago   Up 25 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   stupefied_chatterjee
+@firdauz003 ➜ /workspaces/OSProject (main) $ docker run --rm httpd ls -ld /usr/local/apache2/htdocs
+drwxr-xr-x 2 root root 4096 Jun 13 18:30 /usr/local/apache2/htdocs
 ```
 
-3. What port is open for http protocol on the host machine? ***(1 mark)*** __Fill answer here__.
+2. What port is the apache web server running. ***(1 mark)*** 
+- __Port 80__.
+```bash
+@firdauz003 ➜ /workspaces/OSProject (main) $ docker ps
+CONTAINER ID   IMAGE     COMMAND              CREATED          STATUS          PORTS                                   NAMES
+635a1efe0c43   httpd     "httpd-foreground"   14 minutes ago   Up 14 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   relaxed_goodall
+@firdauz003 ➜ /workspaces/OSProject (main) $ docker exec -it 635a1efe0c43 cat /usr/local/apache2/conf/httpd.conf | grep Listen
+# Listen: Allows you to bind Apache to specific IP addresses and/or
+# Change this to Listen on specific IP addresses as shown below to 
+#Listen 12.34.56.78:80
+Listen 80
+```
+
+3. What port is open for http protocol on the host machine? ***(1 mark)*** __port 8080__.
+```bash
+@firdauz003 ➜ /workspaces/OSProject (main) $ docker port 635a1efe0c43 80
+0.0.0.0:8080
+[::]:8080
+```
 
 ## Create SUB Networks
 
@@ -494,9 +562,38 @@ You have now set up a Node.js application in a Docker container on nodejsnet net
 
 ***Questions:***
 
-1. What is the output of step 5 above, explain the error? ***(1 mark)*** __Fill answer here__.
-2. Show the instruction needed to make this work. ***(1 mark)*** __Fill answer here__.
+1. What is the output of step 5 above, explain the error? ***(1 mark)*** __ there is error because there is no table created yet__.
+```bash
+@firdauz003 ➜ /workspaces/OSProject/nodejs-app (main) $ curl http://localhost:3000/random
+Server Error@firdauz003 ➜ /workspaces/OSProject/nodejs-app (main) $
+```
+2. Show the instruction needed to make this work. ***(1 mark)*** __to make the command in the step 5 work, we need to create a table first__.
+```bash
+@firdauz003 ➜ /workspaces/OSProject/nodejs-app (main) $ docker exec -it be05a2555eef mysql -u root -p
+Enter password: 
+```
+__then we will enter mysql interface__,
+```bash
+mysql> create database mydb;
+Query OK, 1 row affected (0.03 sec)
 
+mysql> use mydb;
+Database changed
+mysql> create table mytable (
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> name VARCHAR(255) NOT NULL,
+    -> value VARCHAR(255) NOT NULL
+    -> );
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> INSERT INTO mytable (name, value) VALUES ('example1', 'value1'), ('example2', 'value2'), ('example3', 'value3');
+Query OK, 3 rows affected (0.02 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+```
+__and then we run again the command in step 5 __
+```bash
+curl http://localhost:3000/random
+```
 
 
 ## What to submit
