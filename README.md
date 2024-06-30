@@ -220,6 +220,57 @@ root@f65be1987f84:~# nano helloworld.txt
 
 5. Edit your helloworld.txt, create your messsage and save by typing ctrl-X. Once saved, explore using the container to see where the file is located. Then exit the shell, by typing **exit**.
 
+```bash
+@najmihoshi ➜ /workspaces/OSProject (main) $ docker exec -i -t gifted_shamir /bin/bash
+root@0506669dd4e9:/# apt-get update
+Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8788 kB]
+Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [164 kB]
+Fetched 9220 kB in 1s (7647 kB/s)                         
+Reading package lists... Done
+root@0506669dd4e9:/# apt-get install nano
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libgpm2 libncursesw6
+Suggested packages:
+  gpm hunspell
+The following NEW packages will be installed:
+  libgpm2 libncursesw6 nano
+0 upgraded, 3 newly installed, 0 to remove and 6 not upgraded.
+Need to get 838 kB of archives.
+After this operation, 3339 kB of additional disk space will be used.
+Do you want to continue? [Y/n]   
+Get:1 http://deb.debian.org/debian bookworm/main amd64 libncursesw6 amd64 6.4-4 [134 kB]
+Get:2 http://deb.debian.org/debian bookworm/main amd64 nano amd64 7.2-1+deb12u1 [690 kB]
+Get:3 http://deb.debian.org/debian bookworm/main amd64 libgpm2 amd64 1.20.7-10+b1 [14.2 kB]
+Fetched 838 kB in 0s (4184 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libncursesw6:amd64.
+(Reading database ... 6090 files and directories currently installed.)
+Preparing to unpack .../libncursesw6_6.4-4_amd64.deb ...
+Unpacking libncursesw6:amd64 (6.4-4) ...
+Selecting previously unselected package nano.
+Preparing to unpack .../nano_7.2-1+deb12u1_amd64.deb ...
+Unpacking nano (7.2-1+deb12u1) ...
+Selecting previously unselected package libgpm2:amd64.
+Preparing to unpack .../libgpm2_1.20.7-10+b1_amd64.deb ...
+Unpacking libgpm2:amd64 (1.20.7-10+b1) ...
+Setting up libgpm2:amd64 (1.20.7-10+b1) ...
+Setting up libncursesw6:amd64 (6.4-4) ...
+Setting up nano (7.2-1+deb12u1) ...
+update-alternatives: using /bin/nano to provide /usr/bin/editor (editor) in auto mode
+update-alternatives: using /bin/nano to provide /usr/bin/pico (pico) in auto mode
+Processing triggers for libc-bin (2.36-9+deb12u7) ...
+root@0506669dd4e9:/# cd /root
+root@0506669dd4e9:~# nano helloworld.txt
+root@0506669dd4e9:~# exit
+```
+
 6. Stop the container and run **docker ps -a**, and restart the container again. Is your file in the container still available?
 ```bash 
 @joeynor ➜ /workspaces/OSProject (main) $ docker stop romantic_jackson
@@ -231,6 +282,23 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 @joeynor ➜ /workspaces/OSProject (main) $ docker restart romantic_jackson
 ```
 
+```bash
+@najmihoshi ➜ /workspaces/OSProject (main) $ docker stop gifted_shamir
+gifted_shamir
+@najmihoshi ➜ /workspaces/OSProject (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS                        PORTS     NAMES
+0506669dd4e9   debian    "bash"    7 minutes ago   Exited (137) 30 seconds ago             gifted_shamir
+@najmihoshi ➜ /workspaces/OSProject (main) $ docker restart gifted_shamir
+gifted_shamir
+@najmihoshi ➜ /workspaces/OSProject (main) $ docker restart gifted_shamir
+gifted_shamir
+@najmihoshi ➜ /workspaces/OSProject (main) $ docker exec -i -t gifted_shamir /bin/bash
+root@0506669dd4e9:/# cd root
+root@0506669dd4e9:~# ls
+helloworld.txt
+root@0506669dd4e9:~# cat helloworld.txt
+Hi world
+```
 7. Stop the container and delete the container. What happened to your helloworld.txt?
 
 ```bash 
@@ -243,6 +311,15 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 @joeynor ➜ /workspaces/OSProject (main) $ docker rm romantic_jackson
 ```
 
+```bash
+@najmihoshi ➜ /workspaces/OSProject (main) $ docker stop gifted_shamir
+gifted_shamir
+@najmihoshi ➜ /workspaces/OSProject (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS                            PORTS     NAMES
+0506669dd4e9   debian    "bash"    13 minutes ago   Exited (137) About a minute ago             gifted_shamir
+@najmihoshi ➜ /workspaces/OSProject (main) $ docker rm gifted_shamir
+gifted_shamir
+```
 ***Questions:***
 
 1. Are files in the container persistent. Why not?. ***(1 mark)*** 
