@@ -568,7 +568,7 @@ You have now set up a Node.js application in a Docker container on nodejsnet net
 ***Questions:***
 
 1. What is the output of step 5 above, explain the error? ***(1 mark)*** 
-- __ There is error because there is no table created yet__.
+- __There is error because there is no table created yet__.
 ```bash
 @firdauz003 ➜ /workspaces/OSProject/nodejs-app (main) $ curl http://localhost:3000/random
 Server Error@firdauz003 ➜ /workspaces/OSProject/nodejs-app (main) $
