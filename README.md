@@ -166,10 +166,11 @@ MiB Swap:      0.0 total,      0.0 free,      0.0 used.   3805.4 avail Mem
 10. Run the command **uname -a**. ***(1 mark)*** 
 <img src="./images/terminalAnswer/10.png" width="70%">
 
-11. What is the available free memory in the system. ***(1 mark)*** __218Mi__.
+11. What is the available free memory in the system. ***(1 mark)*** 
+- __218Mi__.
 
-
-12. What is the available disk space mounted on /workspace. ***(1 mark)*** __20771672__.
+12. What is the available disk space mounted on /workspace. ***(1 mark)*** 
+- __20771672__.
 
 13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)*** 
 - Version: __22.04.1-Ubuntu__.
@@ -179,14 +180,14 @@ MiB Swap:      0.0 total,      0.0 free,      0.0 used.   3805.4 avail Mem
 - __ls is command lists files and directories in the current directory.__
 - __ls -asl command provide detailed listing including hidden files,in long format, file permissions, owner, group, size and modification time.__
 
-15. What is the TLB size of the Virtual CPU. ***(1 mark)*** __2560 4K pages__.
+15. What is the TLB size of the Virtual CPU. ***(1 mark)*** 
+- __2560 4K pages__.
 
+16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** 
+- __3229.147 Mhz__.
 
-16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** __3229.147 Mhz__.
-
-
-17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** __PID 4610__.
-
+17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** 
+- __PID 4610__.
 
 
 ## Running your own container instance.
@@ -318,12 +319,14 @@ docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ 
 
 ***Questions:***
 
-1. What is the permission of folder /usr/local/apache/htdocs and what user and group owns the folder? . ***(2 mark)*** __drwxr-xr-x represents the permissions:
-d indicates it's a directory
-rwx means the owner (root) has read, write, and execute permissions
-r-x means the group (root) has read and execute permissions, but not write
-r-x means others (everyone else) have read and execute permissions, but not write
-root root indicates the owner and group of the directory, both of which are root__.
+1. What is the permission of folder /usr/local/apache/htdocs and what user and group owns the folder? . ***(2 mark)*** 
+- The permission is __'drwxr-xr-x'__:
+d indicates it's a directory,
+rwx means the owner (root) has read, write, and execute permissions,
+r-x means the group (root) has read and execute permissions only,
+r-x means others (everyone else) also have read and execute permissions only.
+- __Both the user and group are root__.
+
 ```bash
 @firdauz003 ➜ /workspaces/OSProject (main) $ docker run --rm httpd ls -ld /usr/local/apache2/htdocs
 drwxr-xr-x 2 root root 4096 Jun 13 18:30 /usr/local/apache2/htdocs
@@ -342,7 +345,9 @@ CONTAINER ID   IMAGE     COMMAND              CREATED          STATUS          P
 Listen 80
 ```
 
-3. What port is open for http protocol on the host machine? ***(1 mark)*** __port 8080__.
+3. What port is open for http protocol on the host machine? ***(1 mark)*** 
+- __port 8080__.
+
 ```bash
 @firdauz003 ➜ /workspaces/OSProject (main) $ docker port 635a1efe0c43 80
 0.0.0.0:8080
@@ -419,7 +424,7 @@ PING c2 (172.20.0.3): 56 data bytes
 ```
 
 2. What is different from the previous ping in the section above? ***(1 mark)*** 
-- __The previous ping failed because c1 and c2 were on separate networks. Now both containers are connected to the same bridgenet network.__
+- __The previous ping failed because c1 and c2 were on separate networks (bluenet and rednet). Now both containers are connected to the same bridgenet network, which allows them to ping each other.__
 
 ## Intermediate Level (10 marks bonus)
 
@@ -562,17 +567,21 @@ You have now set up a Node.js application in a Docker container on nodejsnet net
 
 ***Questions:***
 
-1. What is the output of step 5 above, explain the error? ***(1 mark)*** __ there is error because there is no table created yet__.
+1. What is the output of step 5 above, explain the error? ***(1 mark)*** 
+- __ There is error because there is no table created yet__.
 ```bash
 @firdauz003 ➜ /workspaces/OSProject/nodejs-app (main) $ curl http://localhost:3000/random
 Server Error@firdauz003 ➜ /workspaces/OSProject/nodejs-app (main) $
 ```
-2. Show the instruction needed to make this work. ***(1 mark)*** __to make the command in the step 5 work, we need to create a table first__.
+
+2. Show the instruction needed to make this work. ***(1 mark)*** 
+- __To make the command in the step 5 work, we need to create a table first__.
 ```bash
 @firdauz003 ➜ /workspaces/OSProject/nodejs-app (main) $ docker exec -it be05a2555eef mysql -u root -p
 Enter password: 
 ```
-__then we will enter mysql interface__,
+
+- __then we will enter mysql interface__,
 ```bash
 mysql> create database mydb;
 Query OK, 1 row affected (0.03 sec)
@@ -590,7 +599,8 @@ mysql> INSERT INTO mytable (name, value) VALUES ('example1', 'value1'), ('exampl
 Query OK, 3 rows affected (0.02 sec)
 Records: 3  Duplicates: 0  Warnings: 0
 ```
-__and then we run again the command in step 5 __
+
+- __and then we run again the command in step 5__
 ```bash
 curl http://localhost:3000/random
 ```
